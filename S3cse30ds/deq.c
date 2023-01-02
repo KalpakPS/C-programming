@@ -71,13 +71,18 @@ void DEQUEUE()
 }
 void INJECT()
 {
-	if(front<=0)
+	if(front==0)
 		printf("Injection not possible!\n");
 	else
 	{
 		printf("Enter the element:");
 		scanf("%d",&n);
-		front--;
+		if(front==-1&&rear==-1)
+		{
+			front=0;rear=0;
+		}
+		else
+			front--;
 		deq[front]=n;
 		DISPLAY();
 	}
