@@ -22,8 +22,7 @@ void main()
 			j=j-1;
 		}
 		a[j+1]=temp;
-		printf("\n");
-		printf("array after iteration %d:\t",i);
+		printf("\narray after iteration %d:\t",i);
 		for(k=0;k<n;k++)
 			printf("%d\t",a[k]);
 		
