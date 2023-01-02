@@ -82,7 +82,6 @@ void PDEQUEUE()
 }
 void DISPLAY()
 {
-	
 	if(front==-1&&rear==-1)
 		printf("The pqueue is empty\n");
 	else
