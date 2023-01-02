@@ -8,7 +8,7 @@ struct poly
 	struct poly *next;
 }*phead,*qhead,*rhead,*pptr,*qptr,*rptr,*new;
 void main()
-{
+{ 
 	char ch='y';
 	int i=1,c,e;
 	phead=(struct poly*)malloc(sizeof(struct poly));
