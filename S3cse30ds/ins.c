@@ -25,7 +25,6 @@ void main()
 		printf("\narray after iteration %d:\t",i);
 		for(k=0;k<n;k++)
 			printf("%d\t",a[k]);
-		
 	}
 	printf("\n");
 }
