@@ -21,20 +21,16 @@ void main()
 		printf("Enter the coef and exp of %d\n",j+1);
 		scanf("%d%d",&p2[j].c,&p2[j].e);
 	}
+	//display changed
 	printf("\nEntered poly 1:\t");
 	for(i=0;i<n-1;i++)
 		printf("%dx^%d+",p1[i].c,p1[i].e);
-	for(i=0;i<n;i++)
-	{
-		if(i==n-1)
-		{
-			if(p1[i].e!=0)
-				printf("%dx^%d\n",p1[i].c,p1[i].e);
-			else
-				printf("%d\n",p1[i].c);		
-		}	
-	}
-
+	//to display last element
+	i=n-1;
+	if(p1[i].e!=0)
+		printf("%dx^%d\n",p1[i].c,p1[i].e);
+	else
+		printf("%d\n",p1[i].c);	
 
 	printf("\nEntered poly 2:\t");
 	for(j=0;j<m-1;j++)
