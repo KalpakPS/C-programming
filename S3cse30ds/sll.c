@@ -18,9 +18,10 @@ struct node
 }*head,*new,*ptr,*ptr1,*ptr2;
 void main()
 {
-	int ch;
+	int ch,flag=0;
 	head=(struct node*)malloc(sizeof(struct node));
-	while(1)
+	head->next=NULL;
+	while(flag==0)
 	{
 		printf("\n***Single linked list***");
 		printf("\n1.Insert\n2.Delete\n3.Search\n4.Display\n5.Exit\n");
@@ -36,7 +37,9 @@ void main()
 				break;
 			case 4:display();
 				break;
-			case 5:exit(0);
+			case 5:flag=1;
+				printf("Exiting..");
+				break;
 			default:printf("Invalid input!\n");
 		}
 	}
