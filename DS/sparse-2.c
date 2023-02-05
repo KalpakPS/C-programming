@@ -1,4 +1,3 @@
-//BM SURAG-21 ,23-11-22
 //sparse matrix addition
 #include<stdio.h>
 #define SIZE 5
