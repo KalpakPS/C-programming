@@ -18,11 +18,11 @@ struct node
 }*head,*new,*ptr,*ptr1,*ptr2;
 void main()
 {
-	int ch;
+	int ch,flag=0;
 	head=(struct node*)malloc(sizeof(struct node));
 	head->next=NULL;
 	head->prev=NULL;
-	while(1)
+	while(flag==0)
 	{
 		printf("\n***Doubly linked list***");
 		printf("\n1.Insert\n2.Delete\n3.Search\n4.Display\n5.Exit\n");
@@ -38,8 +38,10 @@ void main()
 				break;
 			case 4:display();
 				break;
-			case 5:exit(0);
-			default:printf("Invalid input!\n");
+			case 5:flag=1;
+				printf("Exiting..");
+				break;
+			default:printf("Invalid choice!\n");
 		}
 	}
 }
@@ -60,7 +62,7 @@ void insert()
 			break;
 		case 3:insert_any(item);
 			break;
-		default:printf("Invalid input!");
+		default:printf("Invalid choice!");
 	}
 }
 void insert_begin(int item)
@@ -156,7 +158,7 @@ void delete()
 			break;
 		case 3:delete_any();
 			break;
-		default:printf("Invalid input!");
+		default:printf("Invalid choice!");
 	}	
 }
 void delete_begin()

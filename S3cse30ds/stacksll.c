@@ -11,12 +11,13 @@ struct node
 }*top,*new,*ptr,*ptr1;
 void main()
 {
-	int ch;
+	int ch,flag=0;
 	top=(struct node*)malloc(sizeof(struct node));
-	while(1)
+	top->next=NULL;
+	while(flag==0)
 	{
 		printf("\n***Stack using single linked list***");
-		printf("\n1.PUSH\n2.POP\n3.DISPLAY\n5.EXIT\n");
+		printf("\n1.PUSH\n2.POP\n3.DISPLAY\n4.EXIT\n");
 		printf("Enter your choice:");
 		scanf("%d",&ch);
 		switch(ch)
@@ -27,8 +28,10 @@ void main()
 				break;
 			case 3:DISPLAY();
 				break;
-			case 4:exit(0);
-			default:printf("Invalid input!\n");
+			case 4:flag=1;
+				printf("Exiting..");
+				break;
+			default:printf("Invalid choice!\n");
 		}
 	}
 }

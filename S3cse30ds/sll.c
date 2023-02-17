@@ -40,7 +40,7 @@ void main()
 			case 5:flag=1;
 				printf("Exiting..");
 				break;
-			default:printf("Invalid input!\n");
+			default:printf("Invalid choice!\n");
 		}
 	}
 }
@@ -61,7 +61,7 @@ void insert()
 			break;
 		case 3:insert_any(item);
 			break;
-		default:printf("Invalid input!");
+		default:printf("Invalid choice!");
 	}
 }
 void insert_begin(int item)
@@ -138,7 +138,7 @@ void delete()
 			break;
 		case 3:delete_any();
 			break;
-		default:printf("Invalid input!");
+		default:printf("Invalid choice!");
 	}	
 }
 void delete_begin()

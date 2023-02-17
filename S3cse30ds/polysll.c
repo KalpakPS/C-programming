@@ -10,15 +10,15 @@ struct poly
 void main()
 { 
 	char ch='y';
-	int i=1,c,e;
+	int p=1,c,e;
 	phead=(struct poly*)malloc(sizeof(struct poly));
 	pptr=phead;
 	//read poly 1
-	printf("Enter the elements of polynomial 1:\n");
+	printf("**Enter the elements of polynomial 1**\n");
 	while(ch=='y'||ch=='Y')
 	{
-		printf("Enter the coef and exp of %d: ",i);
-		i++;
+		printf("Enter the coef and exp of %d: ",p);
+		p++;
 		scanf("%d%d",&c,&e);
 		new=(struct poly*)malloc(sizeof(struct poly));
 		new->coef=c;
@@ -33,12 +33,12 @@ void main()
 	qhead=(struct poly*)malloc(sizeof(struct poly));
 	qptr=qhead;
 	ch='y';
-	i=1;
-	printf("Enter the elements of polynomial 2:\n");
+	int b=1;
+	printf("**Enter the elements of polynomial 2**\n");
 	while(ch=='y'||ch=='Y')
 	{
-		printf("Enter the coef and exp of %d: ",i);
-		i++;
+		printf("Enter the coef and exp of %d: ",b);
+		b++;
 		scanf("%d%d",&c,&e);
 		new=(struct poly*)malloc(sizeof(struct poly));
 		new->coef=c;

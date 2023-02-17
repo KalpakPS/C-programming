@@ -3,7 +3,7 @@
 #include<stdlib.h>
 void ENQUEUE();//insert at end
 void DEQUEUE();//delete from beginning
-void display();
+void DISPLAY();
 struct node
 {
 	int data;
@@ -11,10 +11,10 @@ struct node
 }*front,*rear,*ptr,*ptr1,*new;
 void main()
 {
-	int ch;
+	int ch,flag=0;
 	front=(struct node*)malloc(sizeof(struct node));
 	rear=front;
-	while(1)
+	while(flag==0)
 	{
 		printf("\n***Queue using single linked list***");
 		printf("\n1.ENQUEUE\n2.DEQUEUE\n3.DISPLAY\n4.EXIT\n");
@@ -26,10 +26,12 @@ void main()
 				break;
 			case 2:DEQUEUE();
 				break;
-			case 3:display();
+			case 3:DISPLAY();
 				break;
-			case 4:exit(0);
-			default:printf("Invalid input!\n");
+			case 4:flag=1;
+				printf("Exiting..");
+				break;
+			default:printf("Invalid choice!\n");
 		}
 	}
 }
@@ -43,7 +45,7 @@ void ENQUEUE()
 	new->next=NULL;
 	rear->next=new;
 	rear=new;
-	display();
+	DISPLAY();
 }
 void DEQUEUE()
 {
@@ -64,10 +66,10 @@ void DEQUEUE()
 			front->next=ptr1;
 			free(ptr);
 		}
-		display();		
+		DISPLAY();		
 	}
 }
-void display()
+void DISPLAY()
 {
 	if(front==rear)
 		printf("Queue is empty\n");
