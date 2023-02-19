@@ -9,13 +9,13 @@ struct poly
 }*phead,*qhead,*rhead,*pptr,*qptr,*rptr,*new;
 void main()
 { 
-	char ch='y';
+	char ch;
 	int p=1,c,e;
 	phead=(struct poly*)malloc(sizeof(struct poly));
 	pptr=phead;
 	//read poly 1
 	printf("**Enter the elements of polynomial 1**\n");
-	while(ch=='y'||ch=='Y')
+	do
 	{
 		printf("Enter the coef and exp of %d: ",p);
 		p++;
@@ -28,14 +28,13 @@ void main()
 		pptr=pptr->next;
 		printf("Do you want to add more terms(y/n):");
 		scanf("%s",&ch);
-	}
+	}while(ch=='y'||ch=='Y');
 	//read poly 2
 	qhead=(struct poly*)malloc(sizeof(struct poly));
 	qptr=qhead;
-	ch='y';
 	int b=1;
 	printf("**Enter the elements of polynomial 2**\n");
-	while(ch=='y'||ch=='Y')
+	do
 	{
 		printf("Enter the coef and exp of %d: ",b);
 		b++;
@@ -48,7 +47,7 @@ void main()
 		qptr=qptr->next;
 		printf("Do you want to add more terms(y/n):");
 		scanf("%s",&ch);
-	}
+	}while(ch=='y'||ch=='Y');
 	//display poly 1
 	printf("polynomial 1 is: ");
 	pptr=phead->next;
@@ -57,13 +56,11 @@ void main()
 		printf("%dx^%d+",pptr->coef,pptr->exp);
 		pptr=pptr->next;	
 	}
-	if(pptr->next==NULL)
-	{
-		if(pptr->exp!=0)
-			printf("%dx^%d\n",pptr->coef,pptr->exp);
-		else
-			printf("%d\n",pptr->coef);		
-	}
+	if(pptr->exp!=0)
+		printf("%dx^%d\n",pptr->coef,pptr->exp);
+	else
+		printf("%d\n",pptr->coef);		
+	
 	//display poly 2
 	printf("polynomial 2 is: ");
 	qptr=qhead->next;
@@ -72,13 +69,11 @@ void main()
 		printf("%dx^%d+",qptr->coef,qptr->exp);
 		qptr=qptr->next;	
 	}
-	if(qptr->next==NULL)
-	{
-		if(qptr->exp!=0)
-			printf("%dx^%d\n",qptr->coef,qptr->exp);
-		else
-			printf("%d\n",qptr->coef);		
-	}
+	if(qptr->exp!=0)
+		printf("%dx^%d\n",qptr->coef,qptr->exp);
+	else
+		printf("%d\n",qptr->coef);		
+	
 	//addition
 	pptr=phead->next;
 	qptr=qhead->next;
@@ -135,11 +130,9 @@ void main()
 		printf("%dx^%d+",rptr->coef,rptr->exp);
 		rptr=rptr->next;	
 	}
-	if(rptr->next==NULL)
-	{
-		if(rptr->exp!=0)
-			printf("%dx^%d\n",rptr->coef,rptr->exp);
-		else
-			printf("%d\n",rptr->coef);		
-	}
+	if(rptr->exp!=0)
+		printf("%dx^%d\n",rptr->coef,rptr->exp);
+	else
+		printf("%d\n",rptr->coef);		
+	
 }
