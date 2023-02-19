@@ -1,6 +1,5 @@
-
+//infix to postfix
 #include<stdio.h>
-#include<conio.h>
 #include<string.h>
 #include<math.h>
 #include <ctype.h>
@@ -12,27 +11,26 @@ int icp(char);
 void evaluate();
 void calc(int,int,char);
 int top=-1,t=-1,s[20];
-char inf[30],post[30],stack[30],x;
+char infix[30],post[30],stack[30],x;
 void main()
 {
     printf("Enter an infix expression:");
-    gets(inf);
+    gets(infix);
     convert();
     printf("The postfix expression is:");
     puts(post);
     evaluate();
-    getch();
 }
 void convert()
 {
     char item;
     int n=0,j=0,i=0,l;
-    l=strlen(inf);
+    l=strlen(infix);
     push('(');
     while(n<l)
     {
         x=pop();
-        item=inf[i];
+        item=infix[i];
         i++;
         if(isalpha(item))
         {
