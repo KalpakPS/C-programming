@@ -1,25 +1,24 @@
-//infix to postfix
 #include<stdio.h>
+#include<ctype.h>
 #include<string.h>
 #include<math.h>
-#include <ctype.h>
-void convert();
-void push(char);
+void evaluate();
 char pop();
+void push(char);
+void calc(int,int,char);
+void convert();
 int isp(char);
 int icp(char);
-void evaluate();
-void calc(int,int,char);
-int top=-1,t=-1,s[20];
+int top=-1,t=-1,s[30];
 char infix[30],post[30],stack[30],x;
 void main()
 {
-    printf("Enter an infix expression:");
+    printf("Enter the infix expression:");
     gets(infix);
     convert();
-    printf("The postfix expression is:");
+    printf("The postfix is:");
     puts(post);
-    evaluate();
+    //evaluate();
 }
 void convert()
 {
@@ -89,7 +88,7 @@ char pop()
     char a;
     a=stack[top];
     top--;
-    return(a);
+    return a;
 }
 int isp(char x)
 {
@@ -103,7 +102,7 @@ int isp(char x)
         case '(':return 0;
         case ')':return -1;
     }
-    return (-1);
+    return(-1);
 }
 int icp(char x)
 {
@@ -117,52 +116,5 @@ int icp(char x)
         case '(':return 9;
         case ')':return 0;
     }
-    return (-1);
-}
-void evaluate()
-{
-    int m=0,n,n1,n2;
-    char a;
-    while(post[m]!='\0')
-    {
-        a=post[m];
-        m++;
-        if(isalpha(a))
-        {
-            printf("enter the value of %c ",a);
-            scanf("%d",&n);
-            s[++t]=n;
-        }
-        else
-        {
-            n1=s[t];
-            t--;
-            n2=s[t];
-            t--;
-            calc(n1,n2,a);
-        }
-    }
-    printf("the result of the expression is %d",s[t]);
-}
-void calc(int n1,int n2,char a)
-{
-    int k;
-    switch(a)
-    {
-        case '+':k=n1+n2;
-            s[++t]=k;
-            break;
-        case '-':k=n2-n1;
-            s[++t]=k;
-            break;
-        case '*':k=n1*n2;
-            s[++t]=k;
-            break;
-        case '/':k=n2/n1;
-            s[++t]=k;
-            break;
-        case '^':k=pow(n2,n1);
-            s[++t]=k;
-            break;
-    }
+    return(-1);
 }

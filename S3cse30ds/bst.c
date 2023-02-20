@@ -70,9 +70,9 @@ void insertion()
 		if(ptr==NULL)
 		{
 			if(parent->data<item)
-			parent->rc=new;
+				parent->rc=new;
 			else if(parent->data>item)
-			parent->lc=new;
+				parent->lc=new;
 		}
 	}
     printf("The current status is:\n");
@@ -84,18 +84,18 @@ void deletion(int item)
 	ptr=root;
 	while(ptr!=NULL&&f==0)
   	{
-      		if(item<ptr->data)
-        	{
-          		parent=ptr;
-          		ptr=ptr->lc;
-        	}
-     		else if(item>ptr->data)
-       		{
-         		parent=ptr;
-          		ptr=ptr->rc;
-        	}
-      		else if(item==ptr->data)
-           		f=1;
+		if(item<ptr->data)
+		{
+			parent=ptr;
+			ptr=ptr->lc;
+		}
+		else if(item>ptr->data)
+		{
+			parent=ptr;
+			ptr=ptr->rc;
+		}
+		else if(item==ptr->data)
+			f=1;
    	}
   	if(f==0)
     		printf("Item does not exist\n");
@@ -106,10 +106,10 @@ void deletion(int item)
              		root=NULL;
       		else if(ptr->lc==NULL&&ptr->rc==NULL)
         	{
-            		if(parent->lc==ptr)
-        		parent->lc=NULL;
-            		else if(parent->rc==ptr)
-        		parent->rc=NULL;
+            	if(parent->lc==ptr)
+        			parent->lc=NULL;
+            	else if(parent->rc==ptr)
+        			parent->rc=NULL;
     		}
       		else if(ptr->lc!=NULL&&ptr->rc!=NULL)
         	{

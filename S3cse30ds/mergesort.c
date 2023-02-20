@@ -16,23 +16,23 @@ void main()
 	for(i=0;i<n;i++)
 		printf("%d\t",a[i]);
 }
-void msort(int l,int r)
+void msort(int left,int right)
 {
 	int mid;
-	if(l>=r)
+	if(left>=right)
 		return;
 	else
 	{
-		mid=(l+r)/2;
-		msort(l,mid);
-		msort(mid+1,r);
-		merge(l,mid,r);
+		mid=(left+right)/2;
+		msort(left,mid);
+		msort(mid+1,right);
+		merge(left,mid,right);
 	}
 }
-void merge(int l,int mid,int r)
+void merge(int left,int mid,int right)
 {
-	int i=l,j=mid+1,k=l,m,t;
-	while(i<=mid&&j<=r)
+	int i=left,j=mid+1,k=left,m,t;
+	while(i<=mid&&j<=right)
 	{
 		if(a[i]<a[j])
 		{
@@ -54,14 +54,14 @@ void merge(int l,int mid,int r)
 		k++;
 		i++;
 	}
-	while(j<=r)
+	while(j<=right)
 	{
 		c[k]=a[j];
 		k++;
 		j++;
 	}
 	printf("\nAfter iteration %d:",q++);
-	for(m=l;m<k;m++)
+	for(m=left;m<k;m++)
 		a[m]=c[m];
 	for(t=0;t<n;t++)
 		printf("%d\t",a[t]);
